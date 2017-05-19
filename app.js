@@ -3,7 +3,7 @@ $(document).ready(function() {
   var addition = $('#plus5Clock');
   var subtraction = $('#minus5Clock');
   var minutesSession = $("#num");
-  var sessionTitle = $('#sesionTitle');
+  var sessionTitle = $('#sessionTitle');
   var count = parseInt(minutesSession.html());
 
   var additionBreak = $('#add5Break');
@@ -11,8 +11,6 @@ $(document).ready(function() {
   var minutesBreak = $("#breakNum");
   var breakTitle = $('#breakTitle');
   var countBreak = parseInt(minutesBreak.html() );
-
-
 
   var start = $('#start');
   var reset = $('#reset')
@@ -61,37 +59,39 @@ $(document).ready(function() {
 
     var counter = setInterval (timer, 1000);
     count*=60;
+    countBreak*=60;
 
     function timer() {
       count-=1;
-      if (count>=0) {
-        minutesSession.html(count);
-      } else {
+      if (count===0) {
         clearInterval(counter);
-        var startBreak = setInterval(breakTimer, 1000);
+        var startBreak = setInterval (breakTimer, 1000);
       }
 
       //changing counting into minutes and seconds
       if (count%60 >= 10){
-        minutesSession.html(Math.floor(count/60) + ":" + count%60)
+        minutesSession.html(Math.floor(count/60) + ":" + count%60);
+      } else {
+        minutesSession.html(Math.floor(count/60) + "0" + ":" + "0"+ count%60);
       }
 
       // Counts down the break time, when session gets to 0
       function breakTimer(){
 
-        if (countBreak>0) {
-          sessionTitle.hide();
-          breakTitle.show();
-          minutesBreak.show();
-          countBreak-=1;
-          minutesBreak.html(countBreak);
-        } else {
+        sessionTitle.hide();
+        breakTitle.show();
+        minutesBreak.show();
+        countBreak-=1;
+
+        if (countBreak===0) {
           clearInterval(startBreak);
           reset.show();
         }
 
         if (countBreak%60 >= 10){
-          minutesBreak.html(Math.floor(count/60) + ":" + count%60)
+          minutesBreak.html(Math.floor(count/60) + ":" + count%60);
+        } else {
+          minutesBreak.html(Math.floor(count/60) + "0" + ":" + count%60);
         }
       }
 
