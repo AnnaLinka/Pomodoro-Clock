@@ -1,3 +1,3 @@
 # Pomodoro-Clock
 
-project in progress, still draft 30% ready
+project in progress, still draft 90% ready

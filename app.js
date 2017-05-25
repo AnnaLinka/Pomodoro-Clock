@@ -107,8 +107,8 @@ $(document).ready(function() {
     subtractionBreak.show();
     minutesBreak.show();
     breakTitle.show();
-    count = 0;
-    countBreak = 0;
+    count = 5;
+    countBreak = 1;
     reset.hide();
   });
 
