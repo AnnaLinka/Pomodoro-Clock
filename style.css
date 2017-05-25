@@ -1,7 +1,7 @@
 body {
   background-color: #f3f3f3;
   font-family: Verdana, sans-serif;
-  background: url("img.jpg") bottom center no-repeat;
+  background: url("lake.jpg") bottom center no-repeat;
   background-size: cover;
   height: 100vh;
   max-width: 100vw;
@@ -63,17 +63,3 @@ h3 {
   font-size: 1.5em;
   margin: 0.5em;
 }
-/*.btn-active {
-  -webkit-box-shadow: 1px 1px 5px 3px rgba(104,105,91,1);
-  -moz-box-shadow: 1px 1px 5px 3px rgba(104,105,91,1);
-  box-shadow: 1px 1px 5px 3px rgba(104,105,91,1);
-  background-color: rgba(102, 183, 228, 0.58);
-}
-
-.btn-secondary {
-  color: #fff;
-  padding: 1rem;
-  background-color: #97a2eb;
-  margin-bottom: 1rem;
-  border-radius: 10%;
-}*/
