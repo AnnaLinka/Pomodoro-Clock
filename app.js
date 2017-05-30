@@ -65,6 +65,7 @@ $(document).ready(function() {
       count-=1;
       if (count===0) {
         clearInterval(counter);
+        new Audio('time_over.ogg').play();
         var startBreak = setInterval (breakTimer, 1000);
       }
 
