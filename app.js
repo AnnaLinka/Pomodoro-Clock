@@ -18,35 +18,36 @@ $(document).ready(function() {
 //On click susbtracts 5 minutes from session time
   subtraction.click(function (){
     //can not have negative time, so time have  to be more than 0
-    if (count>5) {
-      count-=5;
+    if (count>1) {
+      count-=1;
       minutesSession.html(count);
     }
   });
 
 //On click adds 5 minutes to session time
   addition.click(function (){
-      count+=5;
+      count+=1;
       minutesSession.html(count);
   });
 
 //On click susbtracts 5 minutes from break time
   subtractionBreak.click(function (){
     //can not have negative time, so time have to be more than 0
-    if (countBreak>5) {
-      countBreak-=5;
+    if (countBreak>1) {
+      countBreak-=1;
       minutesBreak.html(countBreak);
     }
   });
 
 //On click adds 5 minutes to break time
   additionBreak.click(function (){
-      countBreak+=5;
+      countBreak+=1;
       minutesBreak.html(countBreak);
   });
 
 //Counts down the session time, after click on start
   start.click( function() {
+
     //Hides unecessery buttons
     reset.hide();
     start.hide();
@@ -66,6 +67,7 @@ $(document).ready(function() {
       if (count===0) {
         clearInterval(counter);
         new Audio('time_over.ogg').play();
+        // breakTimer();
         var startBreak = setInterval (breakTimer, 1000);
       }
 
@@ -76,27 +78,27 @@ $(document).ready(function() {
         minutesSession.html(Math.floor(count/60) + "0" + ":" + "0"+ count%60);
       }
 
-      // Counts down the break time, when session gets to 0
-      function breakTimer(){
+    // Counts down the break time, when session gets to 0
+    function breakTimer(){
 
-        sessionTitle.hide();
-        breakTitle.show();
-        minutesBreak.show();
-        countBreak-=1;
+      sessionTitle.hide();
+      minutesSession.hide();
+      breakTitle.show();
+      minutesBreak.show();
+      countBreak-=1;
 
-        if (countBreak===0) {
-          clearInterval(startBreak);
-          reset.show();
-        }
-
-        if (countBreak%60 >= 10){
-          minutesBreak.html(Math.floor(count/60) + ":" + count%60);
-        } else {
-          minutesBreak.html(Math.floor(count/60) + "0" + ":" + count%60);
-        }
+      if (countBreak===0) {
+        clearInterval(startBreak);
+        reset.show();
       }
 
+      if (countBreak%60 >= 10){
+        minutesBreak.html(Math.floor(count/60) + ":" + count%60);
+      } else {
+        minutesBreak.html(Math.floor(count/60) + "0" + ":" + count%60);
+      }
     }
+  }
 
   });
 
@@ -112,8 +114,6 @@ $(document).ready(function() {
     countBreak = 1;
     reset.hide();
   });
-
-
 
 
 });
