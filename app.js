@@ -76,7 +76,7 @@ $(document).ready(function() {
       if (count%60 >= 10){
         minutesSession.html(Math.floor(count/60) + ":" + count%60);
       } else {
-        minutesSession.html(Math.floor(count/60) + "0" + ":" + "0"+ count%60);
+        minutesSession.html(Math.floor(count/60) + ":" + "0"+ count%60);
       }
 
     // Counts down the break time, when session gets to 0
@@ -99,7 +99,7 @@ $(document).ready(function() {
       if (countBreak%60 >= 10){
         minutesBreak.html(Math.floor(countBreak/60) + ":" + countBreak%60);
       } else {
-        minutesBreak.html(Math.floor(countBreak/60) + "0" + ":" + "0" + countBreak%60);
+        minutesBreak.html(Math.floor(countBreak/60) + ":" + "0" + countBreak%60);
       }
     }
   }
